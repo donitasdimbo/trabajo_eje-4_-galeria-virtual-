@@ -12,11 +12,14 @@
 <body>
     <a-scene background="color: lightblue "> 
         <a-entity environment="preset: forest; dressingAmount: 20; "></a-entity>
+        <a-entity geometry="primitive: box; width:10 ; height:10 ; depth: 0.15;" position="0 0.011 -4"  material="color:white"> </a-entity>
+        <a-entity geometry="primitive : box; width: 6; height: 10; depth: 0.15;" position="-6 0.011 -1.4" rotation="0 60 0" material="color:white"> </a-entity>
+        
+        <a-plane  src="assets/imagenes/alfombra2.jpg" position="0 0.011 -5" rotation="-90 0 0" width="12" height="8" color="white"></a-plane>
+        <a-box position="4.00985 1.90098 1.9806" rotation="0 180 0" color="black" shadow="" scale="13 4 0.5"></a-box>
 
-        <a-plane position="0 0.011 -4" rotation="-90 0 0" width="10" height="10" color="white"></a-plane>
-        <a-entity text="value: CLAMOR SOCIAL\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:3 " scale="2 2 1 " position="2 4 -4"  ></a-entity>
-
-        <a-entity text="value: Teresa Margolles\n Regina Jose Galindo\n Gabriela Golden\n Daniel Brittany Chavez\n; font:assets/custom3-msdf.json; fontImage:assets/custom3.png; negate:false ; color:black; width:2" scale="2 2 1 " position="2 3 -4"></a-entity>    
+        <a-entity text="value: CLAMOR SOCIAL\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:3 " scale="2 2 1 " position="2 4 -3"  ></a-entity>
+        <a-entity text="value: Teresa Margolles\n Regina Jose Galindo\n Gabriela Golden\n Daniel Brittany Chavez\n; font:assets/custom3-msdf.json; fontImage:assets/custom3.png; negate:false ; color:black; width:2" scale="2 2 1 " position="2 3 -3"></a-entity>    
         
 
     </a-scene>
