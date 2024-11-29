@@ -17,17 +17,34 @@
 
         <a-entity environment="preset: forest; dressingAmount: 20; "></a-entity>
         <a-plane  src="assets/imagenes/alfombra2.jpg" position="0 0.011 0" rotation="-90 0 0" width="8" height="8" color="white"></a-plane> <!--piso-->
+        <a-entity geometry="primitive: box; width:8 ; height:8; depth: 0.15;" position="4 1 0" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pared lateral de lobby 1 (derecha)-->
+        <a-entity geometry="primitive: box; width:8 ; height:8; depth: 0.15;" position="-4 1 0" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pared lateral de lobby 2 (izquierda)-->
+        <a-entity geometry="primitive: box; width:8 ; height:8; depth: 0.15;" position="0 1 4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--pared trasera de lobby 2 (atras)-->
+        <a-entity geometry="primitive: box; width:3 ; height:8; depth: 0.15;" position="-2.5 1 -4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--puerta 1 (izq)-->
+        <a-entity geometry="primitive: box; width:3 ; height:8; depth: 0.15;" position="2.5 1 -4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--puerta 2 (der)-->
+        <a-entity geometry="primitive: box; width:3 ; height:2.5; depth: 0.15;" position="0 3.75 -4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--puerta 3 (enmedio)-->
         <a-triangle rotation="-90 0 0" position="0 0.011 -5" color="yellow"></a-triangle>
 
         <!--cuarto 1-->
-        <a-entity geometry="primitive: box; width:22 ; height:12; depth: 0.15;" position="0 0.011 -21.5"  material="color:gray"> </a-entity> <!--pared de cuarto 1 (trasera)-->
-        <a-entity geometry="primitive : box; width: 12; height: 12; depth: 0.15;" position="-7.9 0.011 -16.2" rotation="0 -60 0" material="color:gray"> </a-entity> <!--parede lateral izq-->
-        <a-entity geometry="primitive: box; width:12 ; height:12; depth:0.15;" position="7.9 0.011 -16.2" rotation="0 60 0" material="color:gray"></a-entity> <!--pared lateral dere-->
+        <a-entity geometry="primitive: box; width:22 ; height:12; depth: 0.15;" position="0 0.011 -21.5"  material="color:gray" static-body> </a-entity> <!--pared de cuarto 1 (trasera)-->
+        <a-entity geometry="primitive : box; width: 12; height: 12; depth: 0.15;" position="-7.9 0.011 -16.2" rotation="0 -60 0" material="color:gray" static-body> </a-entity> <!--parede lateral izq-->
+        <a-entity geometry="primitive: box; width:12 ; height:12; depth:0.15;" position="7.9 0.011 -16.2" rotation="0 60 0" material="color:gray" static-body></a-entity> <!--pared lateral dere-->
 
         <!--cuarto 2-->
-        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15;" position="21.5 0.011 0" rotation="0 90 0" material="color:gray"></a-entity><!--pared (trasera)-->
-        <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 7.9" rotation="0 150 0" material="color:gray"></a-entity>
+        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15;" position="21.5 0.011 0" rotation="0 90 0" material="color:gray" static-body></a-entity><!--pared (trasera)-->
+        <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 7.9" rotation="0 150 0" material="color:gray" static-body></a-entity>
         <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 -7.9" rotation="0 -150 0" material="color:gray"></a-entity>
+
+        <!--cuarto 3-->
+        <a-entity geometry="primitive: box; width:22; height:12 ; depth:0.15" position="0 0.011 21.5" rotation="0 -180 0" material="color:gray" static-body></a-entity>
+        <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="7.9 0.011 16.2" rotation="0 -60 0 " material="color:gray"  static-body></a-entity>
+        <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="-7.9 0.011 16.2" rotation="0 60 0 " material="color:gray"  static-body></a-entity>
+        
+        <!--cuarto 4-->
+        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15" position="-21.5 0.011 0" rotation="0 -90 0" material="color:gray" static-body></a-entity>
+        <a-entity geometry="primitve: box; width:12; height:12; depth:0.15" position="-16.2 0.011 7.9" rotation="0 -150 0" material="color:gray" static-body></a-entity>
+        <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="-16.2 0.011 -7.9" rotation="0 -30 0" material="color:gray" static-body></a-entity>
+
 
         <!--textos-->
         <a-entity text="value: CLAMOR SOCIAL\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:3 " scale="2 2 1 " position="2 2.6 -2.9"  ></a-entity>
