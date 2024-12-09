@@ -34,11 +34,19 @@
         <a-entity geometry="primitive: box; width:3 ; height:8; depth: 0.15;" position="2.5 1 -4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--puerta 2 (der)-->
         <a-entity geometry="primitive: box; width:3 ; height:2.5; depth: 0.15;"position="0 3.75 -4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--puerta 3 (enmedio)-->
         <a-triangle rotation="-90 0 0" position="0 0.011 -5" color="yellow"></a-triangle>
+        <!--pasillo 1-->
+        <a-entity geometry="primitive: box; width:4 ; height:6; depth: 0.15;" position="1.07 0 -6" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pasillo 2 (der)-->
+        <a-entity geometry="primitive: box; width:4 ; height:6; depth: 0.15;" position="-1.07 0 -6" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pasillo 2 (der)-->
+        <a-entity geometry="primitive: box; width:4 ; height:6; depth: 0.15;" position="1.07 0 -6" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pasillo 2 (der)-->
+        <a-entity geometry="primitive: box; width:4 ; height:7; depth: 0.15;" position="1.07 2.7 -6.5" rotation="-90 0 0" material="color:gray" static-body> </a-entity> <!--pasillo 2 (der)-->
+
 
         <!--cuarto 1-->
         <a-entity geometry="primitive: box; width:22 ; height:12; depth: 0.15;" position="0 0.011 -21.5"  material="color:gray" static-body> </a-entity> <!--pared de cuarto 1 (trasera)-->
-        <a-entity geometry="primitive : box; width: 12; height: 12; depth: 0.15;" position="-7.9 0.011 -16.2" rotation="0 -60 0" material="color:gray" static-body> </a-entity> <!--parede lateral izq-->
+        <a-entity geometry="primitive : box; width: 12; height: 12; depth: 0.15;" position="-7.9 0.011 -16.2" rotation="0 -60 0" material="color:gray" static-body> </a-entity> <!--pared lateral izq-->
         <a-entity geometry="primitive: box; width:12 ; height:12; depth:0.15;" position="7.9 0.011 -16.2" rotation="0 60 0" material="color:gray" static-body></a-entity> <!--pared lateral dere-->  
+        <a-entity geometry="primitive:box; width:22; height:12; depth:0.15" position="0 0.011 -17" rotation="-90 0 0"  color="gray"  static-body></a-entity>
+        <a-entity geometry="primitive: box; width:12 ; height:12; depth: 0.15;" position="0 0 -11.1" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--pared principal 2-->
         <!--textos cuarto 1-->
         <a-entity text="value: EN EL AIRE\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:black; width: 6 " scale="2 2 1 " position="0 3.5 -21.4"  ></a-entity>
         <a-entity text="value: Teresa Margolles\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:5 " scale="2 2 1 " position="0 3.1 -21.4"  ></a-entity>
@@ -53,6 +61,7 @@
         <a-entity geometry="primitive: box; width:22; height:12; depth:0.15;" position="21.5 0.011 0" rotation="0 90 0" material="color:gray" static-body></a-entity><!--pared (trasera)-->
         <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 7.9" rotation="0 150 0" material="color:gray" static-body></a-entity>
         <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 -7.9" rotation="0 -150 0" material="color:gray"></a-entity>
+        <a-entity geometry="primitive:box; width:16; height:24; depth:0.15" position="19 0.011 -1.2" rotation="-90 0 0"  color="white"  static-body></a-entity>
         <!--textos cuarto 2-->
         <a-entity text="value: ¿Quien puede borrar las huellas?\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:black; width: 6 " scale="2 2 1 " position="21.3 4 -1" rotation="0 -90 0" ></a-entity>
         <a-entity text="value: Regina J. Galindo\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:5 " scale="2 2 1 " position="21.3 3.5 0" rotation="0 -90 0" ></a-entity>
@@ -61,6 +70,7 @@
         <a-entity geometry="primitive: box; width:22; height:12 ; depth:0.15" position="0 0.011 21.5" rotation="0 -180 0" material="color:gray" static-body></a-entity>
         <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="7.9 0.011 16.2" rotation="0 -60 0 " material="color:gray"  static-body></a-entity>
         <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="-7.9 0.011 16.2" rotation="0 60 0 " material="color:gray"  static-body></a-entity>
+        <a-entity geometry="primitive:box; width:21.5; height:12; depth:0.15" position="0 0.011 17" rotation="-90 0 0"  color="white"  static-body></a-entity>
         <!--textos cuarto 3-->
         <a-entity text="value: Los ojos desiertos\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:black; width: 6 " scale="2 2 1 " position="0 4 21.3" rotation="0 -180 0" ></a-entity>
         <a-entity text="value: Gabriela Golder\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:5 " scale="2 2 1 " position="0 3.5 21.3" rotation="0 -180 0" ></a-entity>
@@ -69,6 +79,7 @@
         <a-entity geometry="primitive: box; width:22; height:12; depth:0.15" position="-21.5 0.011 0" rotation="0 -90 0" material="color:gray" static-body></a-entity>
         <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="-16.2 0.011 7.9" rotation="0 -150 0" material="color:gray" static-body></a-entity>
         <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="-16.2 0.011 -7.9" rotation="0 -30 0" material="color:gray" static-body></a-entity>
+        <a-entity geometry="primitive:box; width:11; height:22; depth:0.15" position="-16 0.011 0" rotation="-90 0 0"  color="white"  static-body></a-entity>
         <!--textos cuarto 4-->
         <a-entity text="value:Quisieron enterrarnos, no sabian que eramos semillas\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:black; width: 6 " scale="2 2 1 " position="-21.3 4 0" rotation="0 90 0" ></a-entity>
         <a-entity text="value: Daniel B. Chavez\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:5 " scale="2 2 1 " position="-21.3 3.5 0" rotation="0 90 0" ></a-entity>
