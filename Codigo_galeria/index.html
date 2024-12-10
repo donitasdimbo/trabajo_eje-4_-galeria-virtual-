@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,20 +13,38 @@
 
 </head>
 <body>
-    <a-scene background="color:white" physics gravity="-9.81"> 
+    <a-scene background="color:white" physics gravity="-9.80"> 
 
-        <!--camara (prueba)-->
-        <a-entity id="rig" movement-controls position="0 1.6 0" >
-            <a-entity id="camera" camera position="0 0 0" look-controls="pointerLockEnabled: true"></a-entity>
-        </a-entity>
-        <a-cursor></a-cursor>
+        <a-assets>
+            <a-assets-item id="navmesh" src="assets/malla1.glb"> </a-assets-item>
+        </a-assets> 
         
-        <!--a-entity environment="preset: forest; dressingAmount: 2;"></a-entity-->
+        <a-entity environment="preset: forest; dressingAmount: 2;"></a-entity>
         <a-plane  src="assets/imagenes/alfombra2.jpg" position="0 0.011 0" rotation="-90 0 0" width="8" height="8" color="white"></a-plane> <!--piso-->
+
+        <!-- Player. -->
+        <a-entity id="rig" movement-controls="constrainToNavMesh: true; controls: checkpoint, gamepad, trackpad, keyboard, nipple;" position="0 0 0">
+            <a-entity camera
+            position="0 1.6 0"
+             look-controls="pointerLockEnabled: true">
+            <a-cursor></a-cursor>
+        </a-entity>
+        </a-entity>
+
+        <a-entity nav-mesh
+            normal-material
+            visible="false"
+            position="0 0 0"
+            gltf-model="#navmesh">
+        </a-entity>
 
         <!--techo universal-->
         <!--a-entity geometry="primitive: box; width: 43; height: 43; depth:0.15;" position=" 0 6 0" rotation="-90 0 0" material="color:gray" static-body></a-entity-->
-        
+        <a-assets>
+            <a-assets-item id="techo" src="assets/modelos3D/techo1.glb"> </a-assets-item>
+        </a-assets>
+        <a-entity gltf-model="#techo" position="0 5 -21.5"></a-entity>
+
         <a-entity geometry="primitive: box; width:8 ; height:8; depth: 0.15;" position="4 1 0" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pared lateral de lobby 1 (derecha)-->
         <a-entity geometry="primitive: box; width:8 ; height:8; depth: 0.15;" position="-4 1 0" rotation="0 -90 0" material="color:gray" static-body> </a-entity> <!--pared lateral de lobby 2 (izquierda)-->
         <a-entity geometry="primitive: box; width:8 ; height:8; depth: 0.15;" position="0 1 4" rotation="0 -180 0" material="color:gray" static-body> </a-entity> <!--pared trasera de lobby 2 (atras)-->
