@@ -63,8 +63,7 @@
 
         <!--sonido-->
     
-        <a-entity id="prueba" geometry="primitive: plane" material="color: blue" position="0 0 0" sound="src: #audio; on: click; volume:0.005; positional:false" ></a-entity>
-
+        <a-entity id="prueba" position="0 0 0" sound="src: #audio; autoplay: true; volume:0.005; positional:false" ></a-entity>
 
         <!--techos universal-->
         <a-entity gltf-model="#techo" position="0 5.4 -25.3"></a-entity> <!--techo margolles-->
@@ -142,20 +141,28 @@
 
 
         <!--cuarto 2-->
-        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15;" position="21.5 0.011 -27.15" rotation="0 90 0" material="color:gray"></a-entity><!--pared (trasera)-->
-        <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 -19.29" rotation="0 150 0" material="color:gray"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.47" position="11.73125 -0.00276 -32.58374" rotation="0 -150 0" material="color: gray"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 7.59" position="18.34541 0.011 -36.41817" rotation="0 -150 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 4" position="11.02043 0.011 -24.22012" rotation="0 90 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 4.18" position="11.01822 0.011 -30.06672" rotation="0 90 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="11.0204 4.296 -27.0917" rotation="0 90 0" material="color: gray" scale="1 1.01 1"></a-entity>
-        <a-entity geometry="primitive:box; width:16; height:24; depth:0.15" position="19. 0.011 -27.3" rotation="-90 0 0"  material="color:white ; shader:flat"></a-entity>
-        <a-entity geometry="primitive:box; width:11; height:22; depth:0.15" position="-16.52 0.011 -27.260" rotation="-90 0 0"  material="color:white"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -28.03273" rotation="0 -180 0" material="color: gray"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -26.14182" rotation="0 -180 0" material="color: gray"></a-entity>
+        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15" position="-21.5 0.011 -27.24" rotation="0 -90 0" material="color:gray"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 6.6" position="-18.737 0.002 -17.85478" rotation="0 -150 0" material="color: gray"></a-entity><!--pared derecha-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.57283 0.002 -21.41179" rotation="0 -150 0" material="color: gray"></a-entity><!--pared derecha 2-->
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.0348 4.304 -19.992" rotation="0 -150 0" material="color: gray"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 6.55" position="-18.648 0.011 -36.579" rotation="0 -30 0" material="color: gray"></a-entity><!--pared izquierda 1-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.61145 0.002 -33.06974" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity><!--pared izquierda 2-->
+        <!--pared izquierda 3-->
+        <!--pasillo 1-->
+        <a-entity geometry="depth: 0.15; height: 6; width: 10" position="-11.5269 2.995 -37.47653" rotation="0 210.00000000000003 0" material="color: gray"> </a-entity>
+        <!--pasillo 2-->
+        <a-entity geometry="depth: 0.15; height: 6; width: 8.84" position="-10.30857 2.995 -36.20643" rotation="0 210.00000000000003 0" material="color: gray"> </a-entity>
+        <!--techo pasillo-->
+        <a-entity geometry="primitive: box; width:9.9; height:12; depth: 0.15;" position="-11. 0.011 -27.26" rotation="0 -90 0" material="color:gray"> </a-entity> <!--pared principal-->
 
         <!--experimentacion de pisadas-->
-        <a-entity geometry="primitive: box;" material="color:red; shader:flat"  position="-16.58 -3.9 -22.346" scale="1 1 1"  animation="property: object3D.position.y; to: -.25; dir: alternate; dur: 5500; loop: true"> </a-entity>
+        <a-entity geometry="primitive: plane; height:2; width:2" material="color:red; shader:flat"  position="-16.58 -3.9 -22.346" rotation="-90 0 0"  animation="property: object3D.position.y; to: -.25; dir: alternate; dur: 5500; loop: true"> </a-entity>
+        <a-entity  geometry="primitive: plane; height: 2; width: 2" material="color: red; shader: flat;" position="-18 -3.9 -25.34" rotation="-90 0 0" animation="property: object3D.position.y; to: .16; dir: alternate; dur: 5800; loop: true; delay:0.5;"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-16.60686 -3.3478606358689005 -27.03806" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-18.39628 -3.34786 -28.89203" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-16.45873 -0.18848747187152748 -30.59543" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-18.1618 -1.2288774888371767 -32.59191" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane;height: 2; width: 2" material="shader: flat; color: red" position="-15.71937 -0.8322682202680013 -33.38185" rotation="-90.05 0.15 -0.03" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
 
 
         <!--textos cuarto 2-->
@@ -190,15 +197,19 @@
         </a-video>  
         
         <!--cuarto 4-->
-       <a-entity geometry="primitive: box; width:22; height:12; depth:0.15" position="-21.5 0.011 -27.24" rotation="0 -90 0" material="color:gray"></a-entity>
-       <a-entity geometry="depth: 0.15; height: 12; width: 6.6" position="-18.737 0.002 -17.85478" rotation="0 -150 0" material="color: gray"></a-entity><!--pared derecha-->
-       <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.57283 0.002 -21.41179" rotation="0 -150 0" material="color: gray"></a-entity><!--pared derecha 2-->
-       <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.0348 4.304 -19.992" rotation="0 -150 0" material="color: gray"></a-entity>
-       <a-entity geometry="depth: 0.15; height: 12; width: 6.77" position="-18.79233 0.011 -36.61724" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity><!--pared izquierda 1-->
-       <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.61145 0.002 -33.06974" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity><!--pared izquierda 2-->
-       <!--pared izquierda 3-->
-       <!--pasillo 1-->
-       <a-entity geometry="depth: 0.15; height: 6; width: 10" position="-11.5269 2.995 -37.47653" rotation="0 210.00000000000003 0" material="color: gray"> </a-entity>
+       <a-entity geometry="primitive: box; width:22; height:12; depth:0.15;" position="21.5 0.011 -27.15" rotation="0 90 0" material="color:gray"></a-entity><!--pared (trasera)-->
+        <a-entity geometry="primitive:box; width:12; height:12; depth:0.15" position="16.2 0.011 -19.29" rotation="0 150 0" material="color:gray"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 2.65" position="12.095 -0.003 -32.790" rotation="0 -150 0" material="color: gray"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 7.59" position="18.34541 0.011 -36.41817" rotation="0 -150 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 4" position="11.02043 0.011 -24.22012" rotation="0 90 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 4.18" position="11.01822 0.011 -30.06672" rotation="0 90 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="11.0204 4.296 -27.0917" rotation="0 90 0" material="color: gray" scale="1 1.01 1"></a-entity>
+        <a-entity geometry="primitive:box; width:16; height:24; depth:0.15" position="19. 0.011 -27.3" rotation="-90 0 0"  material="color:white ; shader:flat"></a-entity>
+        <a-entity geometry="primitive:box; width:11; height:22; depth:0.15" position="-16.52 0.011 -27.260" rotation="-90 0 0"  material="color:white"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -28.03273" rotation="0 -180 0" material="color: gray"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -26.14182" rotation="0 -180 0" material="color: gray"></a-entity>
+
+
        <!--pasillo 2-->
        
        <!--techo pasillo-->
