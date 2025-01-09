@@ -30,9 +30,23 @@
     </script>
 
 </head>
+<body>
+    <a-scene background="color:white" physics gravity="-9.80"> 
+        
+        
+        <!--sistema de gestion de assets-->
+        <a-assets>
+            <a-assets-item id="navmesh" src="assets/modelos3D/quit-1.glb"> </a-assets-item>
+            <a-assets-item id="audio" src="assets/sonidos/marcha-argentina.mp3" preload="auto"></a-assets-item>
+            <a-assets-item id="techos" src="assets/modelos3D/techos_blancos.glb"> </a-assets-item>
+            <img id="play" src="assets/imagenes/pausa_.png">
+            <img id="pause" src="assets/imagenes/play_.png">
+            <video id="video" src="assets/video/golder_video.mp4" loop="true"></video>
+        </a-assets> 
+        
+        <a-entity environment="preset: forest; dressingAmount: 1; groundYScale:0.15; lighting: distante; shadow:true; shadowSize:5; lightIntensity: 0 ;lightColor: #feeded; "></a-entity>
+        <a-plane  src="assets/imagenes/alfombra2.jpg" position="0 0.011 -26.568" rotation="-90 0 0" width="8" height="8" color="white"></a-plane> <!--piso-->
 
-<<<<<<< HEAD
-=======
         <!-- Player. -->
         <a-entity id="rig" movement-controls="constrainToNavMesh: true; controls: checkpoint, gamepad, trackpad, keyboard, nipple;" position="0 0 0">
             <a-entity camera position="0 1.8 0" look-controls="pointerLockEnabled: true">
@@ -56,25 +70,24 @@
         
         
         <!--pared lateral de lobby 1 (derecha)-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 2.8" position="4 1 -29.169" rotation="0 -90 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.74" position="4 1 -24.345" rotation="0 -90 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 2.8" position="4 0.011 -29.169" rotation="0 -90 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.74" position="4 -0.010 -24.345" rotation="0 -90 0" material="color: gray"> </a-entity>
         <!--pared trasera de lobby 2 (atras)-->
-        <a-entity geometry="depth: 0.15; height: 8; width: 3.2" position="2.457 1 -22.549" rotation="0 -180 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 8; width: 3.15" position="-2.467 1 -22.549" rotation="0 -180 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="-0.031 4.296 -22.55" rotation="0 -180 0" material="color: gray" scale="1 1.01 1"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 6.57; width: 2" position="-0.07694 2.65347 -19.25" rotation="-90 0 0" material="color: white"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 8; width: 8" position="0 1 -30.50212" rotation="0 -180 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 8; width: 3.2" position="2.457 1.9 -22.549" rotation="0 -180 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 8; width: 3.15" position="-2.467 1.9 -22.549" rotation="0 -180 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="-0.031 4.140 -22.55" rotation="0 -180 0" material="color: gray" scale="1 1.01 1"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 8; width: 8" position="0 1.9 -30.50212" rotation="0 -180 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="3.99947 4.296 -27.092" rotation="0 90 0" material="color: gray" scale="1 1.01 1"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 2; width: 7" position="7.50613 2.65322 -27.0616" rotation="-90 0 0" material="color: white"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 8; width: 8" position="-3.9622 1 -26.46369" rotation="0 90 0" material="color: gray"> </a-entity>
+        
+        <a-entity geometry="depth: 0.15; height: 8; width: 8" position="-3.9622 1.9 -26.46369" rotation="0 90 0" material="color: gray"> </a-entity>
         <a-entity geometry="primitive:box; depth:0.01; height:2; width:2;" position="0 3.7 -30.4" rotacion="0 90 0 " material="color:white"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 8; width: 6.52" position="0.93394 1 -19.26775" rotation="0 -90 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 8; width: 6.52" position="-0.97946 1 -19.26775" rotation="0 -90 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 8; width: 6.52" position="0.93394 1.9 -19.26775" rotation="0 -90 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 8; width: 6.52" position="-0.97946 1.9 -19.26775" rotation="0 -90 0" material="color: gray"> </a-entity>
         <!--paredes para las obras-->
         <a-entity geometry="primitive: box; depth: 0.2; height: 4; width: 2.5" position="-2.47 2.58 -24.24" rotation="0 -45 0" material="shader: flat; color: white"></a-entity>
         <a-entity geometry="depth: 0.2; height: 4; width: 2.5" position="2.23 2.58 -24.24" rotation="0 45 0" material="shader: flat; color: white"></a-entity>
         <a-entity geometry="depth: 0.2; height: 4; width: 2.5" position="1.93319 2.58 -28.90289" rotation="0 -45 0" material="shader: flat; color: white"></a-entity>
-        <a-entity geometry="primitive:box;depth: 0.2; height: 4; width: 2.5" position="-2.37141 2.58 -28.90289" rotation="0 45 0" material="shader: flat; color: white"></a-entity>
+        <a-entity geometry="primitive:box;depth: 0.2; height: 4; width: 2.5" position="-2.37141 2.58 -28.90289" rotation="0 45 0" material="shader: flat; color: white"></a-entity
 
         
         <!--textos de curaduria incial-->
@@ -239,5 +252,4 @@
     </a-scene>
 
 </body>
->>>>>>> ab84cc0d1a2dcbf2cd9f86ff383434b26dd14634
 </html>
