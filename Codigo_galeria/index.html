@@ -29,21 +29,6 @@
         });
     </script>
 
-    <script>
-        // Definir un componente para manejar el cambio de posición
-        AFRAME.registerComponent('clickable', {
-            init: function () {
-                const el = this.el;
-  
-                // Escuchar el evento 'click'
-                el.addEventListener('click', function () {
-                // Cambiar la posición del elemento
-                el.setAttribute('position', { x: 0, y: 1.8, z: 0 }); // Cambia estas coordenadas según lo que necesites
-                });
-            }
-        });
-    </script>
-
 </head>
 <body>
     <a-scene background="color:white" physics gravity="-9.80"> 
@@ -79,25 +64,13 @@
             gltf-model="#navmesh">
         </a-entity>
 
-
         <!--sonido-->
     
         <a-entity id="prueba" position="0 0 0" sound="src: #audio; autoplay: true; volume:0.005; positional:false" ></a-entity>
 
         <!--techos universal-->
         <a-entity gltf-model="#techos" material ></a-entity> <!--techo margolles-->
-        <a-entity gltf-model="#pisos" position="0 -5.904 0" material="shader:flat"></a-entity>
-        <a-entity gltf-model="#pum" material="shader:flat"  ></a-entity>
-
-
-        <a-entity id="wall-gem"
-            checkpoint="offset: 0 -0.8 0;"
-            position="0 1 -21"
-            gltf-model="#pum"
-            scale="0.5 0.5 0.5"
-            glow="color: #33FF66; intensity: 0.5"
-            clickable>
-        </a-entity>
+        <a-entity gltf-model="#pisos" position="0 -5.9 0" ></a-entity> 
 
         <!--pared lateral de lobby 1 (derecha)-->
         <a-entity geometry="depth: 0.15; height: 12; width: 2.8" position="4 0.011 -29.169" rotation="0 -90 0" material="color: gray"> </a-entity>
@@ -135,14 +108,11 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 4.5" position="-6.0576 0.0101 -14.124" rotation="0 59.9 0" material="color: gray"></a-entity><!--pared izquierda2-->
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2.1" position="-7.69744 4.30386 -11.29194" rotation="0 59.9 0" material="color: gray"></a-entity>
         <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="7.9 0.011 -10.8" rotation="0 -60 0 " material="color:gray"></a-entity><!--pared derecha-->
-<<<<<<< HEAD
+
         <a-entity geometry="depth: 0.15; height: 12; width: 4" position="2.86469 0.011 -16.01826" rotation="0 -180 0" material="color: gray"> </a-entity> <!--pared principal 1-->
         <a-entity geometry="depth: 0.15; height: 12; width: 4" position="-2.911 0.011 -16.02371" rotation="0 -180 0" material="color: gray"> </a-entity><!--pared principal 2-->
         <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="-0.031 4.296 -16.019" rotation="0 -180 0" material="color: gray" scale="1 1.01 1"></a-entity><!--pared principal 3-->
-=======
-        <a-entity geometry="primitive: box; width:21.5; height:12; depth:0.15" position="0 0 -10.092" rotation="-90 0 0" material="src:assets/texturas/piso_margolles.jpg"></a-entity> <!--piso-->
         <a-entity geometry="depth: 0.15; height: 12; width: 10.15" position="-0.00127 0.011 -16.024" rotation="0 -180 0" material="color: gray"> </a-entity><!--pared principal-->
->>>>>>> 661472a7ac00bf40606ec82368f1e64b6cdd116f
         <a-entity geometry="depth: 0.15; height: 6; width: 12.1" position="-12.07761 2.93513 -14.85403" rotation="0 -230 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 6; width: 4" position="-8.43115 3.035 -13.75141" rotation="0 -230 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 6; width: 10.8" position="-10.64982 3.035 -16.39162" rotation="0 -230 0" material="color: gray"></a-entity>
@@ -151,16 +121,10 @@
     
 
         <!--textos cuarto 1-->
-<<<<<<< HEAD
-        <a-entity text="value: EN EL AIRE\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:black; width: 6 " scale="2 2 1 " position="8 4.5 -9.893" rotation="0 -60 0" ></a-entity>
-        <a-entity text="value: Teresa Margolles\n; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:red; width:5 " scale="2 2 1 " position=" 7.93 3.58 -9.83" rotation=" 0 -60 0"></a-entity>
-        <a-entity text="value:Tipo de obra: Instalación\n La obra reflexiona sobre la fragilidad de la vida y la cercanía de la muerte.\n El contraste entre la ligereza de las burbujas y el origen del agua confronta al espectador con la vida perdida y la fina línea entre existir y desaparecer. Al romperse las burbujas sobre los cuerpos de los presentes, se destaca la presencia de la vida mientras se recuerda la ausencia de quienes ya no están.\n ; font:assets/fuente-msdf/fuente-msdf.json ; fontImage:assets/fuente-msdf/fuente.png; negate:false ; color:black; width: 1 " scale="2 2 1 " position="5.87 1.96 -13.93" rotation="0 -60 0" ></a-entity>
-=======
         <a-entity text="color: black; font: assets/fuente-msdf/fuente-msdf.json; fontImage: assets/fuente-msdf/fuente.png; negate: false; value: EN EL AIRE\n; width: 6" scale="2 2 1" position="4.29676 4.73946 -15.93817" rotation=""></a-entity>
         <a-entity text="color: red; font: assets/fuente-msdf/fuente-msdf.json; fontImage: assets/fuente-msdf/fuente.png; negate: false; value: Teresa Margolles\n; width: 5" scale="2 2 1" position="2.99172 3.96742 -15.92898" rotation=""></a-entity>
         <a-entity geometry="depth: 0.02; height: 2; width: 3" position="-0.23175 2.04434 -15.95269" rotation="" material="src: assets/imagenes/papel-cafe.jpg"></a-entity>
         <a-entity text="color: black; font: assets/fuente-msdf/fuente-msdf.json; fontImage: assets/fuente-msdf/fuente.png; negate: false; value: Tipo de obra: Instalación\n La obra reflexiona sobre la fragilidad de la vida y la cercanía de la muerte.\n El contraste entre la ligereza de las burbujas y el origen del agua confronta al espectador con la vida perdida y la fina línea entre existir y desaparecer. Al romperse las burbujas sobre los cuerpos de los presentes, se destaca la presencia de la vida mientras se recuerda la ausencia de quienes ya no están.\n; width: 1" scale="2 2 1" position="-0.27527 2.12926 -15.9435" rotation=""></a-entity>
->>>>>>> 661472a7ac00bf40606ec82368f1e64b6cdd116f
         
         <!--experimentacion burbujas-->
         <!--a-entity geometry="primitive: box; " material="color:pink" position=" -2 0.5 -3" animation="property: object3D.position.y; to: 1.2; dir: alternate; dur: 1000; loop: true" ></a-entity-->
@@ -198,13 +162,13 @@
         <a-entity geometry="primitive: box; width:9.9; height:12; depth: 0.15;" position="-11. 0.011 -27.26" rotation="0 -90 0" material="color:gray"> </a-entity> <!--pared principal-->
 
         <!--experimentacion de pisadas-->
-        <a-entity geometry="primitive: box; height:2; width:2" material="color:red; shader:flat"  position="-16.58 -2 -21.346" rotation="-90 0 0"  animation="property: object3D.position.y; to: -.15; dir: alternate; dur: 5500; loop: true"> </a-entity>
-        <a-entity  geometry="primitive: box; height: 2; width: 2" material="color: red; shader: flat;" position="-15.17 -3.2 -23.69" rotation="-90 0 0" animation="property: object3D.position.y; to: .16; dir: alternate; dur: 5800; loop: true; delay:0.5;"></a-entity>
-        <a-entity geometry="primitive: box; height: 2; width: 2" material="shader: flat; color: red" position="-17.02 -2.75 -25.68" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: box; height: 2; width: 2" material="shader: flat; color: red" position="-15 -2.75 -27.3" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: box; height: 2; width: 2" material="shader: flat; color: red" position="-16.2 -0.129 -29.66" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: box; height: 2; width: 2" material="shader: flat; color: red" position="-18.1618 -1.2288774888371767 -32.59191" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: box;height: 2; width: 2" material="shader: flat; color: red" position="-15.71937 -0.8322682202680013 -33.38185" rotation="-90.05 0.15 -0.03" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height:2; width:2" material="color:red; shader:flat"  position="-16.58 -3.9 -22.346" rotation="-90 0 0"  animation="property: object3D.position.y; to: -.25; dir: alternate; dur: 5500; loop: true"> </a-entity>
+        <a-entity  geometry="primitive: plane; height: 2; width: 2" material="color: red; shader: flat;" position="-18 -3.9 -25.34" rotation="-90 0 0" animation="property: object3D.position.y; to: .16; dir: alternate; dur: 5800; loop: true; delay:0.5;"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-16.60686 -3.3478606358689005 -27.03806" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-18.39628 -3.34786 -28.89203" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-16.45873 -0.18848747187152748 -30.59543" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-18.1618 -1.2288774888371767 -32.59191" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        <a-entity geometry="primitive: plane;height: 2; width: 2" material="shader: flat; color: red" position="-15.71937 -0.8322682202680013 -33.38185" rotation="-90.05 0.15 -0.03" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
 
 
         <!--textos cuarto 2-->
@@ -220,13 +184,8 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 3" position="-5.743 -0.003 -37.186" rotation="0 -60 0" material="color: gray"></a-entity> <!--pared lateral izq-->
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-6.75573 4.304 -39.06753" rotation="0 -60 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 7.59" position="-9.12986 0.011 -43.17049" rotation="0 -60 0" material="color: gray"> </a-entity> <!--pared lateral dere-->  
-<<<<<<< HEAD
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.47" position="5.87736 -0.00276 -37.44316" rotation="0 60 0" material="color: gray"></a-entity>
-=======
-        <a-entity geometry="primitive:box; width:22; height:12; depth:0.15" position="0 0.011 -41.965" rotation="-90 0 0"  material="src:assets/texturas/piso_golder.jpg"></a-entity>
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2.05" position="7.21805 4.32642 -39.86798" rotation="0 59.99999999999999 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 3.47" position="5.86668 -0.00276 -37.52333" rotation="0 59.99999999999999 0" material="color: gray"></a-entity>
->>>>>>> 661472a7ac00bf40606ec82368f1e64b6cdd116f
         <a-entity geometry="depth: 0.15; height: 12; width: 6.5" position="9.409 0.011 -43.626" rotation="0 60 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 8.43" position="9.93441 0.03099 -36.17405" rotation="0 -40 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 9.68" position="11.37962 0.01521 -37.70313" material="color: gray" rotation="0 -40 0"> </a-entity>
@@ -252,6 +211,7 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 4" position="11.02043 0.011 -24.22012" rotation="0 90 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 4.18" position="11.01822 0.011 -30.06672" rotation="0 90 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="11.0204 4.296 -27.0917" rotation="0 90 0" material="color: gray" scale="1 1.01 1"></a-entity>
+        <a-entity geometry="primitive:box; width:16; height:24; depth:0.15" position="19. 0.011 -27.3" rotation="-90 0 0"  material="color:white ; shader:flat"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -28.03273" rotation="0 -180 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -26.14182" rotation="0 -180 0" material="color: gray"></a-entity>
 
