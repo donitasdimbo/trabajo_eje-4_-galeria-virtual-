@@ -29,6 +29,32 @@
         });
     </script>
 
+    <script>
+        // Componente para mover la cámara a una posición específica sin glitches
+        AFRAME.registerComponent('clickable', {
+            init: function () {
+                const el = this.el; // Referencia al modelo interactivo
+                const cameraRig = document.querySelector('#rig'); // Selección del rig de la cámara
+
+                // Escuchar el evento 'click'
+                el.addEventListener('click', function () {
+                    if (cameraRig) {
+                        // Desactivar temporalmente movement-controls
+                        cameraRig.removeAttribute('movement-controls');
+
+                        // Cambiar la posición del rig de la cámara
+                        cameraRig.setAttribute('position', { x: 0, y: 0, z: 0 });
+
+                        // Reactivar movement-controls después de un pequeño retraso
+                        setTimeout(() => {
+                            cameraRig.setAttribute('movement-controls', 'constrainToNavMesh: true; controls: checkpoint, gamepad, trackpad, keyboard, nipple;');
+                        }, 50); // Ajusta el retraso si es necesario
+                    }
+                });
+            }
+        });
+    </script>
+
 </head>
 <body>
     <a-scene background="color:white" physics gravity="-9.80"> 
@@ -53,8 +79,8 @@
         <!-- Player. -->
         <a-entity id="rig" movement-controls="constrainToNavMesh: true; controls: checkpoint, gamepad, trackpad, keyboard, nipple;" position="0 0 0">
             <a-entity camera position="0 1.8 0" look-controls="pointerLockEnabled: true">
-            <a-cursor></a-cursor>
-        </a-entity>
+                <a-cursor></a-cursor>
+            </a-entity>
         </a-entity>
 
         <a-entity nav-mesh
@@ -70,7 +96,16 @@
 
         <!--techos universal-->
         <a-entity gltf-model="#techos" material ></a-entity> <!--techo margolles-->
-        <a-entity gltf-model="#pisos" position="0 -5.9 0" ></a-entity> 
+        <a-entity gltf-model="#pisos" position="0 -5.9 0" ></a-entity>
+        
+        <!-- Modelo interactivo -->
+        <a-entity id="wall-gem"
+            position="0 0.5 -21"
+            gltf-model="#pum"
+            scale="0.5 0.5 0.5"
+            glow="color: #33FF66; intensity: 0.5"
+            clickable>
+        </a-entity>
 
         <!--pared lateral de lobby 1 (derecha)-->
         <a-entity geometry="depth: 0.15; height: 12; width: 2.8" position="4 0.011 -29.169" rotation="0 -90 0" material="color: gray"> </a-entity>
@@ -210,7 +245,6 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 4" position="11.02043 0.011 -24.22012" rotation="0 90 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 4.18" position="11.01822 0.011 -30.06672" rotation="0 90 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="11.0204 4.296 -27.0917" rotation="0 90 0" material="color: gray" scale="1 1.01 1"></a-entity>
-        <a-entity geometry="primitive:box; width:16; height:24; depth:0.15" position="19. 0.011 -27.3" rotation="-90 0 0"  material="color:white ; shader:flat"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -28.03273" rotation="0 -180 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 7.06" position="7.56815 0.031 -26.14182" rotation="0 -180 0" material="color: gray"></a-entity>
 
