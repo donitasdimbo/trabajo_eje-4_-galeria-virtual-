@@ -67,6 +67,10 @@
             <a-assets-item id="techos" src="assets/modelos3D/techos_blancos.glb"> </a-assets-item>
             <a-assets-item id="pisos" src="assets/modelos3D/pisos1.glb"></a-assets-item>
             <a-assets-item id="pum" src="assets/modelos3D/pruebachet.glb"></a-assets-item>
+            <a-assets-item id="pis1" src="assets/modelos3D/pasillo1.glb"></a-assets-item>
+            <a-assets-item id="pis2" src="assets/modelos3D/pasillo2.glb"></a-assets-item>
+            <a-assets-item id="pis3" src="assets/modelos3D/pasillo3.glb"></a-assets-item>
+            <a-assets-item id="pis4" src="assets/modelos3D/pasillo4.glb"></a-assets-item>
 
             <img id="play" src="assets/imagenes/pausa_.png">
             <img id="pause" src="assets/imagenes/play_.png">
@@ -94,15 +98,20 @@
     
         <a-entity id="prueba" position="0 0 0" sound="src: #audio; autoplay: true; volume:0.005; positional:false" ></a-entity>
 
-        <!--techos universal-->
+        <!--modelos 3d-->
         <a-entity gltf-model="#techos" material ></a-entity> <!--techo margolles-->
         <a-entity gltf-model="#pisos" position="0 -5.9 0" ></a-entity>
+        <a-entity gltf-model="assets/modelos3D/pasillo1.glb" position="0 0.90714 0"></a-entity>
+        <a-entity gltf-model="assets/modelos3D/pasillo2.glb" position="0 0.03 0"></a-entity>
+        <a-entity gltf-model="assets/modelos3D/pasillo3.glb" position="0 0.03 0"></a-entity>
+        <a-entity gltf-model="assets/modelos3D/pasillo4.glb" position="0 0.03 0"></a-entity>
+
         
         <!-- Modelo interactivo -->
         <a-entity id="wall-gem"
-            position="0 0.5 -21"
+            position="-0.01 0.5 -23.4"
             gltf-model="#pum"
-            scale="0.5 0.5 0.5"
+            scale="0.2 0.2 0.2"
             glow="color: #33FF66; intensity: 0.5"
             clickable>
         </a-entity>
@@ -143,10 +152,6 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 4.5" position="-6.0576 0.0101 -14.124" rotation="0 59.9 0" material="color: gray"></a-entity><!--pared izquierda2-->
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2.1" position="-7.69744 4.30386 -11.29194" rotation="0 59.9 0" material="color: gray"></a-entity>
         <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="7.9 0.011 -10.8" rotation="0 -60 0 " material="color:gray"></a-entity><!--pared derecha-->
-
-        <a-entity geometry="depth: 0.15; height: 12; width: 4" position="2.86469 0.011 -16.01826" rotation="0 -180 0" material="color: gray"> </a-entity> <!--pared principal 1-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 4" position="-2.911 0.011 -16.02371" rotation="0 -180 0" material="color: gray"> </a-entity><!--pared principal 2-->
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 1.8" position="-0.031 4.296 -16.019" rotation="0 -180 0" material="color: gray" scale="1 1.01 1"></a-entity><!--pared principal 3-->
         <a-entity geometry="depth: 0.15; height: 12; width: 10.15" position="-0.00127 0.011 -16.024" rotation="0 -180 0" material="color: gray"> </a-entity><!--pared principal-->
         <a-entity geometry="depth: 0.15; height: 6; width: 12.1" position="-12.07761 2.93513 -14.85403" rotation="0 -230 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 6; width: 4" position="-8.43115 3.035 -13.75141" rotation="0 -230 0" material="color: gray"></a-entity>
@@ -163,22 +168,31 @@
 
         <!--experimentacion burbujas-->
         <!--a-entity geometry="primitive: box; " material="color:pink" position=" -2 0.5 -3" animation="property: object3D.position.y; to: 1.2; dir: alternate; dur: 1000; loop: true" ></a-entity-->
-        <a-entity geometry="primitive: sphere; radius:0.2 "  material= "color: lightblue" position="0 3 -10" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1800; loop: true "> </a-entity>
+        <a-entity geometry="primitive: sphere; radius:0.12 "  material= "color: lightblue" position="0 3 -10" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1800; loop: true "> </a-entity>
         <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="1 1 -9.5" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
         <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="0.5 .8 -13.5" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
-        <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="0 1.5 -6.4" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1800; loop: true "> </a-entity>
+        <a-entity geometry="primitive: sphere; radius:0.1 " material="color:lightblue" position="0 1.5 -6.4" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1800; loop: true "> </a-entity>
         <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="5 1 -14" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
         <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="0.5 4.5 -7" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
-        <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="2 3 -10" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1800; loop: true "> </a-entity>
-        <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="-3 4.5 -12.2" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
+        <a-entity geometry="primitive: sphere; radius:0.05 " material="color:lightblue" position="2 3 -10" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1800; loop: true "> </a-entity>
+        <a-entity geometry="primitive: sphere; radius:0.11 " material="color:lightblue" position="-3 4.5 -12.2" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
         <a-entity geometry="primitive: sphere; radius:0.2 " material="color:lightblue" position="1.5 4.5 -7.5" animation="property:object3D.position.y; to: 1.2; dir: alternate; dur: 1500; loop: true "> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-5.86154 1.7768577050204144 -10" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-3.44317 1.2103413144278863 -8.39906" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-5.86154 1.2018767859919401 -8.39906" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-4.81841 1.209177488928226 -11.9845" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-3.092 2.2088897675297883 -10" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-7.83364 1.3494763355856896 -6.4" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
-        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="2.44657 1.1599475901274707 -11.77966" animation="dir: alternate; dur: 1500; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-5.861 1.77 -10" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-3.44 1.21 -8.39906" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.14" material="color: lightblue" position="-5.86 1.2 -8.39906" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-4.81 1.209 -11.9845" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-3.092 2.20 -10" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.09" material="color: lightblue" position="-7.83364 1.3 -6.4" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="2.44657 1.12 -11.77966" animation="dir: alternate; dur: 1500; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.15" material="color: lightblue" position="5.10221 3.87542 -7.5" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-1.27936 1.20553 -11.84687" animation="dir: alternate; dur: 1900; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.1" material="color: lightblue" position="-1.98089 1.36597 -8.58536" animation="dir: alternate; dur: 1850; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="1.85932 4.53139 -14.36512" animation="dir: alternate; dur: 1500; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.05" material="color: lightblue" position="-2.39768 5.8624 -10" animation="dir: alternate; dur: 1560; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-4.81 2.79751 -13.90782" animation="dir: alternate; dur: 1600; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.2" material="color: lightblue" position="-7.24625 2.91907 -10.58561" animation="dir: alternate; dur: 1800; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+        <a-entity geometry="primitive: sphere; radius: 0.15" material="color: lightblue" position="-1.97507 2.4005115279073728 -14.22084" animation="dir: alternate; dur: 1450; loop: true; property: object3D.position.y; to: 1.2"> </a-entity>
+
 
 
         <!--cuarto 2-->
@@ -187,7 +201,7 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.57283 0.002 -21.41179" rotation="0 -150 0" material="color: gray"></a-entity><!--pared derecha 2-->
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.0348 4.304 -19.992" rotation="0 -150 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 6.55" position="-18.648 0.011 -36.579" rotation="0 -30 0" material="color: gray"></a-entity><!--pared izquierda 1-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.61145 0.002 -33.06974" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity><!--pared izquierda 2-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.611 0.002 -33.117" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity><!--pared izquierda 2-->
         <!--pared izquierda 3-->
         <!--pasillo 1-->
         <a-entity geometry="depth: 0.15; height: 6; width: 10" position="-11.5269 2.995 -37.47653" rotation="0 210.00000000000003 0" material="color: gray"> </a-entity>
@@ -197,13 +211,22 @@
         <a-entity geometry="primitive: box; width:9.9; height:12; depth: 0.15;" position="-11. 0.011 -27.26" rotation="0 -90 0" material="color:gray"> </a-entity> <!--pared principal-->
 
         <!--experimentacion de pisadas-->
-        <a-entity geometry="primitive: plane; height:2; width:2" material="color:red; shader:flat"  position="-16.58 -3.9 -22.346" rotation="-90 0 0"  animation="property: object3D.position.y; to: -.25; dir: alternate; dur: 5500; loop: true"> </a-entity>
-        <a-entity  geometry="primitive: plane; height: 2; width: 2" material="color: red; shader: flat;" position="-18 -3.9 -25.34" rotation="-90 0 0" animation="property: object3D.position.y; to: .16; dir: alternate; dur: 5800; loop: true; delay:0.5;"></a-entity>
-        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-16.60686 -3.3478606358689005 -27.03806" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-18.39628 -3.34786 -28.89203" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-16.45873 -0.18848747187152748 -30.59543" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: plane; height: 2; width: 2" material="shader: flat; color: red" position="-18.1618 -1.2288774888371767 -32.59191" rotation="-90 0 0" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
-        <a-entity geometry="primitive: plane;height: 2; width: 2" material="shader: flat; color: red" position="-15.71937 -0.8322682202680013 -33.38185" rotation="-90.05 0.15 -0.03" animation="dir: alternate; dur: 5800; loop: true; property: object3D.position.y; to: .16"></a-entity>
+        
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -21.14547" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piesderecho.png" position="-15.04876 0.123 -22.0895" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piesderecho.png" position="-15.04876 0.123 -23.6342" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -22.69505" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -24.30066" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piesderecho.png" position="-15.04876 0.123 -25.36962" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -26.15165" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piesderecho.png" position="-15.04876 0.123 -27.27351" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -28.12133" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piesderecho.png" position="-15.04876 0.123 -29.28809" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -30.25772" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piesderecho.png" position="-15.04876 0.123 -31.74677" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-16.05326 0.123 -32.79507" rotation="-90 0 0"></a-image>
+        <a-image src="assets/imagenes/piedizquierdo.png" position="-15.71283 0.37311 -34.52366" rotation="-90 -45 0"></a-image>
+        
 
 
         <!--textos cuarto 2-->
@@ -219,9 +242,9 @@
         <a-entity geometry="depth: 0.15; height: 12; width: 7.59" position="-9.12986 0.011 -43.17049" rotation="0 -60 0" material="color: gray"> </a-entity> <!--pared lateral dere-->  
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2.05" position="7.21805 4.32642 -39.86798" rotation="0 59.99999999999999 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 3.47" position="5.86668 -0.00276 -37.52333" rotation="0 59.99999999999999 0" material="color: gray"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 6.5" position="9.409 0.011 -43.626" rotation="0 60 0" material="color: gray"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 6.7" position="9.409 0.011 -43.626" rotation="0 60 0" material="color: gray"> </a-entity>
         <a-entity geometry="depth: 0.15; height: 12; width: 8.43" position="9.93441 0.03099 -36.17405" rotation="0 -40 0" material="color: gray"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 9.68" position="11.37962 0.01521 -37.70313" material="color: gray" rotation="0 -40 0"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 9.58" position="11.37962 0.01521 -37.70313" material="color: gray" rotation="0 -40 0"> </a-entity>
         <a-entity geometry="primitive: box; width:10; height:12; depth: 0.15;" position="0 0 -35.931" rotation="0 -180 0" material="color:gray"> </a-entity> <!--pared principal 2-->
 
         <!--textos cuarto 3-->
@@ -263,7 +286,7 @@
         <!--puertas-->
         <a-entity geometry="depth: 0.15; height: 3.44; width: 1.96" position="-0.01369 1.287 -5.666" rotation="0 -180 0" material="color: #4A2C0F" scale="1 1.01 1"></a-entity>
         <a-entity geometry="depth: 0.15; height: 6; width: 8.94" position="-10.33684 2.995 -36.35184" rotation="0 210.00000000000003 0" material="color: gray"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.035 4.304 -34.44451" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.045 4.304 -34.507" rotation="0 -29.999999999999996 0" material="color: gray"></a-entity>
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2.13" position="14.1626 4.304 -33.98576" rotation="0 -150 0" material="color: gray"></a-entity>
         
         <!--imagenes-->
