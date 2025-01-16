@@ -34,7 +34,7 @@
         AFRAME.registerComponent('clickable', {
             init: function () {
                 const el = this.el; // Referencia al modelo interactivo
-                const cameraRig = document.querySelector('#rig'); // Selección del rig de la cámara
+                const cameraRig = document.querySelector('#rig'); // Seleccion de la cámara
 
                 // Escuchar el evento 'click'
                 el.addEventListener('click', function () {
@@ -48,10 +48,33 @@
                         // Reactivar movement-controls después de un pequeño retraso
                         setTimeout(() => {
                             cameraRig.setAttribute('movement-controls', 'constrainToNavMesh: true; controls: checkpoint, gamepad, trackpad, keyboard, nipple;');
-                        }, 50); // Ajusta el retraso si es necesario
+                        }, 50);
                     }
                 });
             }
+        });
+    </script>
+
+    <script>
+        // Esperar a que el DOM cargue completamente
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.querySelector('#audio2');
+            const control = document.querySelector('#audioControls');
+
+            // Estado inicial
+            let isPlaying = false;
+
+            // Evento click
+            control.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause(); // Pausar audio
+                    control.setAttribute('src', '#play2'); // Cambiar icono a play
+                }   else {
+                    audio.play(); // Reproducir audio
+                    control.setAttribute('src', '#pausa2'); // Cambiar icono a pausa
+                }
+                isPlaying = !isPlaying; // Alternar estado
+            });
         });
     </script>
 
@@ -72,9 +95,15 @@
             <a-assets-item id="pis3" src="modelos3D/pasillo3.glb"></a-assets-item>
             <a-assets-item id="pis4" src="modelos3D/pasillo4.glb"></a-assets-item>
 
+
             <img id="play" src="imagenes/pausa_.png">
             <img id="pause" src="imagenes/play_.png">
+            <audio id="audio2" src="sonidos/lectura_manifiesto.mp3"></audio>
+            <img id="play2" src="imagenes/play2_.png">
+            <img id="pause2" src="imagenes/pausa2_.png">
             <video id="video" src="video/golder_video.mp4" loop="true"></video>
+            
+
         </a-assets> 
         
         <a-entity environment="preset: forest; dressingAmount: 1; groundYScale:0.15; lighting: distante; shadow:true; shadowSize:5; lightIntensity: 0 ;lightColor: #feeded; "></a-entity>
@@ -131,6 +160,14 @@
         <a-entity geometry="depth: 0.2; height: 4; width: 2.5" position="1.93319 2.58 -28.90289" rotation="0 -45 0" material="shader: flat; color: white"></a-entity>
         <a-entity geometry="primitive:box;depth: 0.2; height: 4; width: 2.5" position="-2.37141 2.58 -28.90289" rotation="0 45 0" material="shader: flat; color: white"></a-entity>
 
+        <a-image 
+            id="audioControls" 
+            src="#play2" 
+            position="-3.6 1 -26.45" 
+            rotation="0 90 0"
+            scale="1 1 1" 
+            play-pause-audio>
+        </a-image>
         
         <!--textos de curaduria incial-->
 
@@ -145,17 +182,17 @@
         
 
         <!--cuarto 1 RENOVADO-->
-        <a-entity geometry="primitive: box; depth: 0.15; height: 12; width: 10" position="-5.97 0.011 -5.65" rotation="0 -180 0" material="src:texturas/pared_margolles.jpg"></a-entity>
-        <a-entity geometry="primitive: box; depth: 0.15; height: 12; width: 10" position="5.95 .011 -5.65" rotation="0 -180 0" material="src:texturas/pared_margolles.jpg"></a-entity>
-        <a-entity geometry="primitive: box; depth: 0.15; height: 3; width: 4" position="0 4.5 -5.65" rotation="0 -180 0" material="src:texturas/pared_margolles2.jpg"></a-entity> <!--bloque entrada-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 5.4" position="-9.55704 0.02824 -8.05561" rotation="0 59.9 0" material="src:texturas/pared_margolles.jpg"></a-entity><!--pared izquierda1-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 4.5" position="-6.0576 0.0101 -14.124" rotation="0 59.9 0" material="src:texturas/pared_margolles.jpg"></a-entity><!--pared izquierda2-->
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 2.1" position="-7.69744 4.30386 -11.29194" rotation="0 59.9 0" material="src:texturas/pared_margolles2.jpg"></a-entity> <!--bloque pasillo-->
-        <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="7.9 0.011 -10.8" rotation="0 -60 0 " material="src:texturas/pared_margolles.jpg"></a-entity><!--pared derecha-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 10.15" position="-0.00127 0.011 -16.024" rotation="0 -180 0" material="src:texturas/pared_margolles.jpg"> </a-entity><!--pared principal-->
-        <a-entity geometry="depth: 0.15; height: 6; width: 12.1" position="-12.07761 2.93513 -14.85403" rotation="0 -230 0" material="src:texturas/pasillo.jpg"> </a-entity> <!--pasillo-->
-        <a-entity geometry="depth: 0.15; height: 6; width: 4" position="-8.43115 3.035 -13.75141" rotation="0 -230 0" material="src:texturas/pared_margolles.jpg"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 6; width: 10.8" position="-10.64982 3.035 -16.39162" rotation="0 -230 0" material="src:texturas/pasillo.jpg"></a-entity><!--pasillo-->
+        <a-entity geometry="primitive: box; depth: 0.15; height: 12; width: 10" position="-5.97 0.011 -5.65" rotation="0 -180 0" material="src:texturas/pared_margolles.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="primitive: box; depth: 0.15; height: 12; width: 10" position="5.95 .011 -5.65" rotation="0 -180 0" material="src:texturas/pared_margolles.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="primitive: box; depth: 0.15; height: 3; width: 4" position="0 4.5 -5.65" rotation="0 -180 0" material="src:texturas/pared_margolles2.jpg ; repeat:1 2"></a-entity> <!--bloque entrada-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 5.4" position="-9.55704 0.02824 -8.05561" rotation="0 59.9 0" material="src:texturas/pared_margolles.jpg ; repeat:1 2"></a-entity><!--pared izquierda1-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 4.5" position="-6.0576 0.0101 -14.124" rotation="0 59.9 0" material="src:texturas/pared_margolles.jpg ; repeat:1 2"></a-entity><!--pared izquierda2-->
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2.1" position="-7.69744 4.30386 -11.29194" rotation="0 59.9 0" material="src:texturas/pared_margolles2.jpg ; repeat:1 2"></a-entity> <!--bloque pasillo-->
+        <a-entity geometry="primitive: box; width:12; height:12; depth:0.15" position="7.9 0.011 -10.8" rotation="0 -60 0 " material="src:texturas/pared_margolles.jpg ; repeat:1 2"></a-entity><!--pared derecha-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 10.15" position="-0.00127 0.011 -16.024" rotation="0 -180 0" material="src:texturas/pared_margolles.jpg ; repeat:1 2"> </a-entity><!--pared principal-->
+        <a-entity geometry="depth: 0.15; height: 6; width: 12.1" position="-12.07761 2.93513 -14.85403" rotation="0 -230 0" material="src:texturas/pasillo.jpg ; repeat:1 2"> </a-entity> <!--pasillo-->
+        <a-entity geometry="depth: 0.15; height: 6; width: 4" position="-8.43115 3.035 -13.75141" rotation="0 -230 0" material="src:texturas/pared_margolles.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 6; width: 10.8" position="-10.64982 3.035 -16.39162" rotation="0 -230 0" material="src:texturas/pasillo.jpg ; repeat:1 2"></a-entity><!--pasillo-->
 
         <!--paredes blancas-->
     
@@ -196,19 +233,19 @@
 
 
         <!--cuarto 2-->
-        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15" position="-21.5 0.011 -27.24" rotation="0 -90 0" material="src:texturas/palacio_nacional.jpg"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 6.6" position="-18.737 0.002 -17.85478" rotation="0 -150 0" material="src:texturas/pared_galindo.jpg"></a-entity><!--pared derecha-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.57283 0.002 -21.41179" rotation="0 -150 0" material="src:texturas/pared_galindo.jpg"></a-entity><!--pared derecha 2-->
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.0348 4.304 -19.992" rotation="0 -150 0" material="src:texturas/pared_galindo.jpg"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 6.55" position="-18.648 0.011 -36.579" rotation="0 -30 0" material="src:texturas/pared_galindo.jpg"></a-entity><!--pared izquierda 1-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.611 0.002 -33.117" rotation="0 -29.999999999999996 0" material="src:texturas/pared_galindo.jpg"></a-entity><!--pared izquierda 2-->
+        <a-entity geometry="primitive: box; width:22; height:12; depth:0.15" position="-21.5 0.011 -27.24" rotation="0 -90 0" material="src:texturas/palacio_nacional.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 6.6" position="-18.737 0.002 -17.85478" rotation="0 -150 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"></a-entity><!--pared derecha-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.57283 0.002 -21.41179" rotation="0 -150 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"></a-entity><!--pared derecha 2-->
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.0348 4.304 -19.992" rotation="0 -150 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 6.55" position="-18.648 0.011 -36.579" rotation="0 -30 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"></a-entity><!--pared izquierda 1-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.7" position="-12.611 0.002 -33.117" rotation="0 -29.999999999999996 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"></a-entity><!--pared izquierda 2-->
         <!--pared izquierda 3-->
         <!--pasillo 1-->
-        <a-entity geometry="depth: 0.15; height: 6; width: 10" position="-11.5269 2.995 -37.47653" rotation="0 210.00000000000003 0" material="src:texturas/pasillo.jpg"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 6; width: 10" position="-11.5269 2.995 -37.47653" rotation="0 210.00000000000003 0" material="src:texturas/pasillo.jpg ; repeat:1 2"> </a-entity>
         <!--pasillo 2-->
-        <a-entity geometry="depth: 0.15; height: 6; width: 8.84" position="-10.30857 2.995 -36.20643" rotation="0 210.00000000000003 0" material="src:texturas/pasillo.jpg"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 6; width: 8.84" position="-10.30857 2.995 -36.20643" rotation="0 210.00000000000003 0" material="src:texturas/pasillo.jpg ; repeat:1 2"> </a-entity>
         <!--techo pasillo-->
-        <a-entity geometry="primitive: box; width:9.9; height:12; depth: 0.15;" position="-11. 0.011 -27.26" rotation="0 -90 0" material="src:texturas/pared_galindo.jpg"> </a-entity> <!--pared principal-->
+        <a-entity geometry="primitive: box; width:9.9; height:12; depth: 0.15;" position="-11. 0.011 -27.26" rotation="0 -90 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"> </a-entity> <!--pared principal-->
 
         <!--experimentacion de pisadas-->
         
@@ -230,20 +267,20 @@
 
 
         <!--textos cuarto 2-->
-        <a-entity text="color: black; font: fuente-msdf/fuente-msdf.json; fontImage: fuente-msdf/fuente.png; negate: false; value: ¿Quien puede borrar las huellas?\n; width: 6" scale="2 2 1" position="-21.40109 3.76772 -27.81635" rotation="0 90 0"></a-entity>
+        <a-entity text="color: white; font: fuente-msdf/fuente-msdf.json; fontImage: fuente-msdf/fuente.png; negate: false; value: ¿Quien puede borrar las huellas?\n; width: 6" scale="2 2 1" position="-21.40109 3.76772 -27.81635" rotation="0 90 0"></a-entity>
         <a-entity text="color: red; font: fuente-msdf/fuente-msdf.json; fontImage: fuente-msdf/fuente.png; negate: false; value: Regina J. Galindo\n; width: 5" scale="2 2 1" position="-21.41463 2.60234 -28.99876" rotation="0 90 0"></a-entity>
-        <a-entity geometry="depth: 0.02; height: 2; width: 3" position="-11.11991 1.66708 -27.09781" rotation="0 90 0" material="src: assets/imagenes/papel-cafe.jpg"></a-entity>
+        <a-entity geometry="depth: 0.02; height: 2; width: 3" position="-11.11991 1.66708 -27.09781" rotation="0 90 0" material="src:imagenes/papel-cafe.jpg"></a-entity>
         <a-entity text="color: black; font:fuente-msdf/fuente-msdf.json; fontImage: fuente-msdf/fuente.png; negate: false; value: Tipo de obra: Performance\n
         Creada en memoria de las víctimas del conflicto armado en Guatemala y en rechazo a la candidatura de Efraín Ríos Montt, la obra denuncia la violencia, el genocidio y las heridas de la historia reciente. Utiliza el cuerpo como herramienta simbólica para visibilizar la memoria colectiva y los derechos humanos.; width: 1.5" scale="2 2 1" position="-11.20396 1.80304 -27.05285" rotation="0 -90 0"></a-entity>
         <!--cuarto trasero (3)-->
-        <a-entity geometry="primitive: box; width:22 ; height:12; depth: 0.15;" position="0 0.011 -46.40"  material="src:texturas/pared_golder.jpg"> </a-entity> <!--pared de cuarto 1 (trasera)-->
-        <a-entity geometry="depth: 0.15; height: 12; width: 3" position="-5.743 -0.003 -37.186" rotation="0 -60 0" material="src:texturas/pared_golder.jpg"></a-entity> <!--pared lateral izq-->
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-6.75573 4.304 -39.06753" rotation="0 -60 0" material="src:texturas/pared_golder.jpg"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 7.59" position="-9.12986 0.011 -43.17049" rotation="0 -60 0" material="src:texturas/pared_golder.jpg"> </a-entity> <!--pared lateral dere-->  
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 2.05" position="7.21805 4.32642 -39.86798" rotation="0 59.99999999999999 0" material="src:texturas/pared_golder.jpg"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 3.47" position="5.86668 -0.00276 -37.52333" rotation="0 59.99999999999999 0" material="src:texturas/pared_golder.jpg"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 6.7" position="9.409 0.011 -43.626" rotation="0 60 0" material="src:texturas/pared_golder.jpg"> </a-entity>
-        <a-entity geometry="depth: 0.15; height: 12; width: 8.43" position="9.93441 0.03099 -36.17405" rotation="0 -40 0" material="src:texturas/pasillo.jpg"></a-entity> <!--pasillo 3-->
+        <a-entity geometry="primitive: box; width:22 ; height:12; depth: 0.15;" position="0 0.011 -46.40"  material="src:texturas/pared_golder.jpg ; repeat:1 2 "> </a-entity> <!--pared de cuarto 1 (trasera)-->
+        <a-entity geometry="depth: 0.15; height: 12; width: 3" position="-5.743 -0.003 -37.186" rotation="0 -60 0" material="src:texturas/pared_golder.jpg ; repeat:1 2"></a-entity> <!--pared lateral izq-->
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-6.75573 4.304 -39.06753" rotation="0 -60 0" material="src:texturas/pared_golder.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 7.59" position="-9.12986 0.011 -43.17049" rotation="0 -60 0" material="src:texturas/pared_golder.jpg ; repeat:1 2"> </a-entity> <!--pared lateral dere-->  
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2.05" position="7.21805 4.32642 -39.86798" rotation="0 59.99999999999999 0" material="src:texturas/pared_golder.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 3.47" position="5.86668 -0.00276 -37.52333" rotation="0 59.99999999999999 0" material="src:texturas/pared_golder.jpg ; repeat:1 2"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 6.7" position="9.409 0.011 -43.626" rotation="0 60 0" material="src:texturas/pared_golder.jpg ; repeat:1 2"> </a-entity>
+        <a-entity geometry="depth: 0.15; height: 12; width: 8.43" position="9.93441 0.03099 -36.17405" rotation="0 -40 0" material="src:texturas/pasillo.jpg ; repeat:1 2"></a-entity> <!--pasillo 3-->
         <a-entity geometry="depth: 0.15; height: 12; width: 9.58" position="11.37962 0.01521 -37.70313" material="src:texturas/pasillo.jpg" rotation="0 -40 0"> </a-entity> <!--pasillo 3-->
         <a-entity geometry="primitive: box; width:10; height:12; depth: 0.15;" position="0 0 -35.931" rotation="0 -180 0" material="src:texturas/pared_golder.jpg"> </a-entity> <!--pared principal 2-->
 
@@ -285,8 +322,8 @@
 
         <!--puertas-->
         <a-entity geometry="depth: 0.15; height: 3.44; width: 1.96" position="-0.01369 1.287 -5.666" rotation="0 -180 0" material="color: #4A2C0F" scale="1 1.01 1"></a-entity>
-        <a-entity geometry="depth: 0.15; height: 6; width: 8.94" position="-10.33684 2.995 -36.35184" rotation="0 210.00000000000003 0" material="src:texturas/pasillo.jpg"> </a-entity> <!--pasillo-->
-        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.045 4.304 -34.507" rotation="0 -29.999999999999996 0" material="src:texturas/pared_galindo.jpg"></a-entity>
+        <a-entity geometry="depth: 0.15; height: 6; width: 8.94" position="-10.33684 2.995 -36.35184" rotation="0 210.00000000000003 0" material="src:texturas/pasillo.jpg ; repeat:1 2"> </a-entity> <!--pasillo-->
+        <a-entity geometry="depth: 0.15; height: 3.4; width: 2" position="-15.045 4.304 -34.507" rotation="0 -29.999999999999996 0" material="src:texturas/pared_galindo.jpg ; repeat:1 2"></a-entity>
         <a-entity geometry="depth: 0.15; height: 3.4; width: 2.13" position="14.1626 4.304 -33.98576" rotation="0 -150 0" material="color: gray"></a-entity>
         
         <!--imagenes-->
